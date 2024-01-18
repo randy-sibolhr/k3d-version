@@ -7,5 +7,5 @@ spec:
   selector:
     app: k8s-web-hello
   ports:
-  - port: 3030
+  - port: 30080
     targetPort: 3000

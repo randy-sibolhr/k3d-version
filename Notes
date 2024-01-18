@@ -1,0 +1,16 @@
+k3d cluster create mycluster -p "8900:30080@agent:0" -p "8901:30081@agent:0" -p "8902:30082@agent:0" --agents 2
+
+deployment.yaml - 
+  deployed k8s-web-hello image
+service.yaml - 
+  created service LoadBalancer PORT: 30080 <- localhost:8900
+
+nginx.yaml, 
+deployed nginx docker images, default, no changes
+create service ClusterIP port 80 that directs to port 80 of the pods
+default service is ClusterIP, dont know which nginx pod returned the response
+k8s-web-to-nginx locates cluster 'nginx' through DNS
+
+k8s-web-to-nginx.yaml
+  create LoadBalancer service 30081 <- localhost:8901
+  deployed k8s-web-to-nginx image
