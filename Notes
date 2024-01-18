@@ -14,3 +14,20 @@ k8s-web-to-nginx locates cluster 'nginx' through DNS
 k8s-web-to-nginx.yaml
   create LoadBalancer service 30081 <- localhost:8901
   deployed k8s-web-to-nginx image
+
+
+  kgs                                                                                                                                                             ✔  k3d-stashchuk ⎈  22:28:57 
+NAME               TYPE           CLUSTER-IP      EXTERNAL-IP                        PORT(S)           AGE
+kubernetes         ClusterIP      10.43.0.1       <none>                             443/TCP           66m
+k8s-web-hello      LoadBalancer   10.43.84.80     172.24.0.3,172.24.0.4,172.24.0.5   30080:32550/TCP   51m
+nginx-test         ClusterIP      10.43.131.158   <none>                             30801/TCP         42m
+nginx              ClusterIP      10.43.192.191   <none>                             80/TCP            39m
+k8s-web-to-nginx   LoadBalancer   10.43.254.223   172.24.0.3,172.24.0.4,172.24.0.5   30081:30022/TCP   21m
+
+
+30080:32550/TCP - what does this mean??
+
+alias k='kubectl'
+alias kgd='kubectl get deployment'
+kgp 
+kgb 
